@@ -25,8 +25,14 @@ Results were generated with Python, NumPy 2.2.6, SciPy 1.16.1, scikit-image 0.25
 ## Reproducibility note
 The long benchmark experiments were executed and validated before packaging. Representative reproduction checks from the packaged location were passed, including exact-DP validation, statistics regeneration, ablation/time-matched checks, figure regeneration, and the ISSA audit. The regenerated 120-instance statistics match the archived numerical values exactly (120/120 instances; numerical difference 0.0).
 
+## Repository
+Public repository: https://github.com/lekcha86/RM-MDE-multilevel-thresholding
+
 ## Data availability
-The repository is intended to provide the code and derived results required to reproduce the analyses reported in the manuscript. Large raw image datasets are not redistributed here when they are already available through the cited public source.
+The repository provides the code, certified optima, random seeds, run-level results, figures, and supplementary analyses required to reproduce the reported analyses. Large raw image datasets are not redistributed here when they are already available through the cited public source.
+
+## Requirements
+The tested environment uses Python 3.13 with NumPy 2.2.6, SciPy 1.16.1, scikit-image 0.25.2, and Matplotlib 3.10.5. See `requirements.txt`.
 
 ## License
 A license has not yet been selected. Until a license file is added, no additional permission to reuse the code should be assumed.
