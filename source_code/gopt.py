@@ -187,7 +187,7 @@ def ISSA(prob, n, NP=20, G=60, seed=0, PD=0.3, SD=0.2, ST=0.6, wmax=1.5, wmin=0.
     return T, f, time.perf_counter() - t0, hist
 
 
-# ---------------- MDE (PROPOSED): memetic DE + exact local search ----------------
+# ---------------- RM-MDE: memetic DE + exact local search ----------------
 def MDE(prob, n, NP=20, G=60, F=0.5, Cr=0.9, seed=0, pls=0.15):
     rng = np.random.default_rng(seed); t0 = time.perf_counter()
     X = np.array([rand_sol(rng, n).astype(float) for _ in range(NP)])
