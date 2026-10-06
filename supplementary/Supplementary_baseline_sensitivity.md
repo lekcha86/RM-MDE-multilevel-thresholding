@@ -1,8 +1,8 @@
 # Supplementary material: baseline-parameter robustness check (PSO and DE)
 
-Protocol (fixed before the runs; script `03_source_code/generalized_code/bundle2/baseline_sensitivity.py`): 8 images x 3 criteria x n = 6, 7, 8 x seeds 0-9 = 720 runs per configuration; reference = DP-certified optimum; success = relative gap < 1e-8. RM-MDE was not re-run: its results are the stored ones of `time_matched_DE_PSO.csv` for the same instances and seeds (success 90.1%, mean gap 1.7e-5). 'RM-MDE better / tie / worse' counts the paired runs in which the RM-MDE gap is strictly smaller than / within 1e-8 of / strictly larger than the baseline gap.
+Protocol (fixed before the runs; script `source_code/baseline_sensitivity.py`): 8 images x 3 criteria x n = 6, 7, 8 x seeds 0-9 = 720 runs per configuration; reference = DP-certified optimum; success = relative gap < 1e-8. RM-MDE was not re-run: its results are the stored ones of `time_matched_DE_PSO.csv` for the same instances and seeds (success 90.1%, mean gap 1.7e-5). 'RM-MDE better / tie / worse' counts the paired runs in which the RM-MDE gap is strictly smaller than / within 1e-8 of / strictly larger than the baseline gap.
 
-Per-run results: `05_data_results/baseline_sensitivity_runs.csv`; summary: `05_data_results/baseline_sensitivity.json`. The 16 equal-generation entries are baseline configurations or checks, not all parameter settings of the same kind (9 DE (F, Cr) combinations, 3 PSO variants, 2 + 2 population-size checks).
+Per-run results: `data_results/baseline_sensitivity_runs.csv`; summary: `data_results/baseline_sensitivity.json`. The 16 equal-generation entries are baseline configurations or checks, not all parameter settings of the same kind (9 DE (F, Cr) combinations, 3 PSO variants, 2 + 2 population-size checks).
 
 ## Part 1: equal generations (NP = 20, G = 60 unless stated)
 
