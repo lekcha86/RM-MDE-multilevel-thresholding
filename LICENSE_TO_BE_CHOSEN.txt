@@ -1,0 +1,4 @@
+LICENSE NOTICE
+
+No open-source license has been selected for this repository yet.
+Until the author adds a license, do not assume permission to copy, modify, redistribute, or incorporate the source code beyond rights provided by applicable law.
