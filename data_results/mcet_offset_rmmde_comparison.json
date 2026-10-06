@@ -1,0 +1,812 @@
+{
+ "seeds": [
+  0,
+  1,
+  2,
+  3,
+  4,
+  5,
+  6,
+  7,
+  8,
+  9
+ ],
+ "aggregate": {
+  "A": {
+   "SR_all": 95.89285714285714,
+   "SR_n6_8": 90.83333333333333,
+   "mean_gap": 6.231884768238838e-08
+  },
+  "B": {
+   "SR_all": 93.92857142857143,
+   "SR_n6_8": 88.75,
+   "mean_gap": 1.0103309709499464e-07
+  }
+ },
+ "rows": [
+  {
+   "image": "Cameraman",
+   "n": 2,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 2,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 3,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 3,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 4,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 4,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 5,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 5,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 6,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 6,
+   "formulation": "B",
+   "SR": 90.0,
+   "mean_gap": 7.259214246770439e-09
+  },
+  {
+   "image": "Cameraman",
+   "n": 7,
+   "formulation": "A",
+   "SR": 80.0,
+   "mean_gap": 1.6234688989203073e-06
+  },
+  {
+   "image": "Cameraman",
+   "n": 7,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 8,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cameraman",
+   "n": 8,
+   "formulation": "B",
+   "SR": 60.0,
+   "mean_gap": 4.052969545161859e-08
+  },
+  {
+   "image": "Coins",
+   "n": 2,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 2,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 3,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 3,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 4,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 4,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 5,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 5,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 6,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 6,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 7,
+   "formulation": "A",
+   "SR": 90.0,
+   "mean_gap": 2.1494835299560767e-07
+  },
+  {
+   "image": "Coins",
+   "n": 7,
+   "formulation": "B",
+   "SR": 60.0,
+   "mean_gap": 3.6343850630596377e-07
+  },
+  {
+   "image": "Coins",
+   "n": 8,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coins",
+   "n": 8,
+   "formulation": "B",
+   "SR": 40.0,
+   "mean_gap": 2.800667483395566e-08
+  },
+  {
+   "image": "Moon",
+   "n": 2,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 2,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 3,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 3,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 4,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 4,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 5,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 5,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 6,
+   "formulation": "A",
+   "SR": 90.0,
+   "mean_gap": 2.620985720377991e-09
+  },
+  {
+   "image": "Moon",
+   "n": 6,
+   "formulation": "B",
+   "SR": 90.0,
+   "mean_gap": 1.6247523735380625e-08
+  },
+  {
+   "image": "Moon",
+   "n": 7,
+   "formulation": "A",
+   "SR": 80.0,
+   "mean_gap": 4.4646955268823514e-07
+  },
+  {
+   "image": "Moon",
+   "n": 7,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 8,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Moon",
+   "n": 8,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 2,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 2,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 3,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 3,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 4,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 4,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 5,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 5,
+   "formulation": "B",
+   "SR": 40.0,
+   "mean_gap": 1.2784043020629753e-07
+  },
+  {
+   "image": "Astronaut",
+   "n": 6,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 6,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 7,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 7,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Astronaut",
+   "n": 8,
+   "formulation": "A",
+   "SR": 90.0,
+   "mean_gap": 4.991024168260673e-07
+  },
+  {
+   "image": "Astronaut",
+   "n": 8,
+   "formulation": "B",
+   "SR": 70.0,
+   "mean_gap": 4.425336158553365e-06
+  },
+  {
+   "image": "Coffee",
+   "n": 2,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 2,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 3,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 3,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 4,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 4,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 5,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 5,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 6,
+   "formulation": "A",
+   "SR": 90.0,
+   "mean_gap": 1.3708053348345802e-08
+  },
+  {
+   "image": "Coffee",
+   "n": 6,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 7,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 7,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Coffee",
+   "n": 8,
+   "formulation": "A",
+   "SR": 90.0,
+   "mean_gap": 2.021303015492818e-08
+  },
+  {
+   "image": "Coffee",
+   "n": 8,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 2,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 2,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 3,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 3,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 4,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 4,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 5,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 5,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 6,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 6,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Cat",
+   "n": 7,
+   "formulation": "A",
+   "SR": 70.0,
+   "mean_gap": 6.427081845215133e-09
+  },
+  {
+   "image": "Cat",
+   "n": 7,
+   "formulation": "B",
+   "SR": 90.0,
+   "mean_gap": 2.8669334668153957e-09
+  },
+  {
+   "image": "Cat",
+   "n": 8,
+   "formulation": "A",
+   "SR": 60.0,
+   "mean_gap": 2.6563764665247285e-08
+  },
+  {
+   "image": "Cat",
+   "n": 8,
+   "formulation": "B",
+   "SR": 70.0,
+   "mean_gap": 1.5707393949122767e-08
+  },
+  {
+   "image": "Clock",
+   "n": 2,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Clock",
+   "n": 2,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Clock",
+   "n": 3,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Clock",
+   "n": 3,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Clock",
+   "n": 4,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Clock",
+   "n": 4,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Clock",
+   "n": 5,
+   "formulation": "A",
+   "SR": 90.0,
+   "mean_gap": 5.968781868228202e-07
+  },
+  {
+   "image": "Clock",
+   "n": 5,
+   "formulation": "B",
+   "SR": 90.0,
+   "mean_gap": 5.996200811732917e-07
+  },
+  {
+   "image": "Clock",
+   "n": 6,
+   "formulation": "A",
+   "SR": 90.0,
+   "mean_gap": 2.693016857190381e-09
+  },
+  {
+   "image": "Clock",
+   "n": 6,
+   "formulation": "B",
+   "SR": 90.0,
+   "mean_gap": 2.325451868129935e-09
+  },
+  {
+   "image": "Clock",
+   "n": 7,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Clock",
+   "n": 7,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Clock",
+   "n": 8,
+   "formulation": "A",
+   "SR": 60.0,
+   "mean_gap": 2.9243597491077354e-08
+  },
+  {
+   "image": "Clock",
+   "n": 8,
+   "formulation": "B",
+   "SR": 70.0,
+   "mean_gap": 2.7862818037695435e-08
+  },
+  {
+   "image": "Histology",
+   "n": 2,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 2,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 3,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 3,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 4,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 4,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 5,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 5,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 4.636844075309875e-10
+  },
+  {
+   "image": "Histology",
+   "n": 6,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 6.388360130957406e-10
+  },
+  {
+   "image": "Histology",
+   "n": 6,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 3.488710837624549e-10
+  },
+  {
+   "image": "Histology",
+   "n": 7,
+   "formulation": "A",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 7,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  },
+  {
+   "image": "Histology",
+   "n": 8,
+   "formulation": "A",
+   "SR": 90.0,
+   "mean_gap": 6.87969586523384e-09
+  },
+  {
+   "image": "Histology",
+   "n": 8,
+   "formulation": "B",
+   "SR": 100.0,
+   "mean_gap": 0.0
+  }
+ ]
+}

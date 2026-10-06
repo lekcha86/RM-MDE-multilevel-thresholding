@@ -1,0 +1,1107 @@
+{
+ "protocol": "Image-level statistical analysis (Reviewer 1: effect sizes, CIs, dependence; Reviewer 2, comment 6).\n\nPROTOCOL (fixed before looking at any test result)\n  Unit of analysis : the IMAGE (N = 8). Seeds, threshold counts and criteria are never treated as independent\n                     observations; they are averaged within an image first.\n  Primary outcome  : relative objective gap to the DP-certified optimum, |J - J*| / |J*|, MEAN over the ten seeds\n                     and over n = 6, 7, 8, computed separately for each criterion. (The mean is used instead of the\n                     median because the per-seed median gap of the stronger methods is exactly 0 and would produce\n                     degenerate ties.) Gaps are not pooled across criteria because their scales differ.\n  Secondary outcome: success rate (gap < 1e-8), per image, over seeds and n; it is on a common scale, so it is\n                     also pooled over the three criteria (one value per image).\n  Direction        : for a comparison \"A vs B\", d_i = metric_B - metric_A for the gap and metric_A - metric_B for the\n                     success rate, so POSITIVE d favours A (the first-named method).\n  Tests            : two-sided Wilcoxon signed-rank test on the 8 paired differences (zero differences dropped,\n                     Wilcoxon convention; exact p when there are no ties/zeros). With N = 8 the smallest attainable\n                     two-sided p is 2/2^8 = 0.0078.\n  Effect sizes     : median of d; Hodges-Lehmann estimate (median Walsh average) with the exact distribution-free\n                     confidence interval from the signed-rank distribution (achieved level reported, about 96 %);\n                     matched-pairs rank-biserial correlation r = (W+ - W-)/(W+ + W-); number of images favouring A.\n  Multiplicity     : Holm correction within named families only:\n                       F1 baselines (time-matched, 1x budget): RM-MDE vs PSO, RM-MDE vs DE, per criterion (6 tests)\n                       F2 ablation A (MCET): rand/1+LS vs best/1+LS, vs SDE-donor+LS with fixed F = 0.5, vs rand/1 (3 tests)\n                       S3 donor sensitivity: vs SDE-donor+LS with randomized F, vs SDE-donor+LS with F = Cr = 0.25 (2 tests)\n                       F3 multistart: RM-MDE vs C1, vs C2, per criterion (6 tests)\n                       S1 sensitivity: RM-MDE vs PSO at 3x budget, per criterion (3 tests)\n                       S2 pooled success rate (over criteria) for the primary comparisons of F1, F3 and F2 (separately\n                          Holm-corrected within each of those groups)\n  Friedman         : per criterion, methods RM-MDE, PSO, DE (1x), blocks = images; Kendall's W reported. Post hoc =\n                     the paired Wilcoxon tests of F1 with Holm.\n  CIs for rates    : image-level (cluster) bootstrap, 10000 resamples of the 8 images with a fixed seed; never a\n                     binomial CI that treats runs as independent.\n  Experiment B     : descriptive only (success profile with image-level bootstrap CI); no hypothesis tests.\nOutputs (data_results): stats_image_level.json, stats_image_level_master.csv, stats_image_level_perimage.csv\n",
+ "images": [
+  "Cameraman",
+  "Coins",
+  "Moon",
+  "Astronaut",
+  "Coffee",
+  "Cat",
+  "Clock",
+  "Histology"
+ ],
+ "tests": [
+  {
+   "family": "F1",
+   "comparison": "RM-MDE vs PSO",
+   "criterion": "otsu",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 2.161306026442654e-06,
+   "HL": 4.1191994570118774e-06,
+   "HL_CI_low": -7.471634293168522e-06,
+   "HL_CI_high": 1.847754346049366e-05,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.6111111111111112,
+   "A_better": 7,
+   "ties": 0,
+   "A_worse": 1,
+   "W_plus": 29.0,
+   "W_minus": 7.0,
+   "p_raw": 0.1484375,
+   "p_holm": 0.1484375
+  },
+  {
+   "family": "F1",
+   "comparison": "RM-MDE vs DE",
+   "criterion": "otsu",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 9.373374130002913e-06,
+   "HL": 1.0232728641236444e-05,
+   "HL_CI_low": 1.6878283718620143e-07,
+   "HL_CI_high": 2.2902537051313026e-05,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.8333333333333334,
+   "A_better": 7,
+   "ties": 0,
+   "A_worse": 1,
+   "W_plus": 33.0,
+   "W_minus": 3.0,
+   "p_raw": 0.0390625,
+   "p_holm": 0.078125
+  },
+  {
+   "family": "F1",
+   "comparison": "RM-MDE vs PSO",
+   "criterion": "kapur",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 0.00017048652130291823,
+   "HL": 0.00021551437437556477,
+   "HL_CI_low": 2.1191686447455902e-05,
+   "HL_CI_high": 0.003643904058700173,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.046875
+  },
+  {
+   "family": "F1",
+   "comparison": "RM-MDE vs DE",
+   "criterion": "kapur",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 0.0005447544598934666,
+   "HL": 0.000583084804233695,
+   "HL_CI_low": 0.00010267303746295987,
+   "HL_CI_high": 0.00188046681114553,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.046875
+  },
+  {
+   "family": "F1",
+   "comparison": "RM-MDE vs PSO",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 9.913099790275784e-07,
+   "HL": 1.2254773855822057e-06,
+   "HL_CI_low": 3.560254794648937e-07,
+   "HL_CI_high": 2.5125720669624437e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.046875
+  },
+  {
+   "family": "F1",
+   "comparison": "RM-MDE vs DE",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 2.2789374462834735e-06,
+   "HL": 2.6658887825161653e-06,
+   "HL_CI_low": 8.842950169039432e-07,
+   "HL_CI_high": 4.482602375011188e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.046875
+  },
+  {
+   "family": "S1",
+   "comparison": "RM-MDE vs PSO (3x budget)",
+   "criterion": "otsu",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 1.3698250486636861e-06,
+   "HL": 1.6462247126527527e-06,
+   "HL_CI_low": -8.312343325457239e-06,
+   "HL_CI_high": 1.3928367578058079e-05,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.6111111111111112,
+   "A_better": 7,
+   "ties": 0,
+   "A_worse": 1,
+   "W_plus": 29.0,
+   "W_minus": 7.0,
+   "p_raw": 0.1484375,
+   "p_holm": 0.1484375
+  },
+  {
+   "family": "S1",
+   "comparison": "RM-MDE vs PSO (3x budget)",
+   "criterion": "kapur",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 0.00016479276496994734,
+   "HL": 0.00018898425811471082,
+   "HL_CI_low": 5.778012040982254e-06,
+   "HL_CI_high": 0.0034928890584668922,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.9444444444444444,
+   "A_better": 7,
+   "ties": 0,
+   "A_worse": 1,
+   "W_plus": 35.0,
+   "W_minus": 1.0,
+   "p_raw": 0.015625,
+   "p_holm": 0.03125
+  },
+  {
+   "family": "S1",
+   "comparison": "RM-MDE vs PSO (3x budget)",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 7.925948123462558e-07,
+   "HL": 9.552927390828737e-07,
+   "HL_CI_low": 3.180102056401744e-07,
+   "HL_CI_high": 1.8132964289747293e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.0234375
+  },
+  {
+   "family": "F3",
+   "comparison": "RM-MDE vs multistart C1",
+   "criterion": "otsu",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 3.7339968724322153e-06,
+   "HL": 3.888090997123741e-06,
+   "HL_CI_low": -9.068369698724549e-06,
+   "HL_CI_high": 1.2340522299844825e-05,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.5555555555555556,
+   "A_better": 7,
+   "ties": 0,
+   "A_worse": 1,
+   "W_plus": 28.0,
+   "W_minus": 8.0,
+   "p_raw": 0.1953125,
+   "p_holm": 0.59375
+  },
+  {
+   "family": "F3",
+   "comparison": "RM-MDE vs multistart C2",
+   "criterion": "otsu",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 1.4733751556851249e-06,
+   "HL": 1.296572978566774e-06,
+   "HL_CI_low": -1.0291525538048518e-05,
+   "HL_CI_high": 2.5179167036118544e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.5,
+   "A_better": 6,
+   "ties": 0,
+   "A_worse": 2,
+   "W_plus": 27.0,
+   "W_minus": 9.0,
+   "p_raw": 0.25,
+   "p_holm": 0.59375
+  },
+  {
+   "family": "F3",
+   "comparison": "RM-MDE vs multistart C1",
+   "criterion": "kapur",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 6.079004700090207e-05,
+   "HL": 9.036128735856603e-05,
+   "HL_CI_low": -0.0001023779109958068,
+   "HL_CI_high": 0.0002616369377178073,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.6111111111111112,
+   "A_better": 6,
+   "ties": 0,
+   "A_worse": 2,
+   "W_plus": 29.0,
+   "W_minus": 7.0,
+   "p_raw": 0.1484375,
+   "p_holm": 0.59375
+  },
+  {
+   "family": "F3",
+   "comparison": "RM-MDE vs multistart C2",
+   "criterion": "kapur",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 1.2076019868007288e-05,
+   "HL": 1.751040314686807e-05,
+   "HL_CI_low": -0.00011221134077014766,
+   "HL_CI_high": 0.00037407214327247947,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.3888888888888889,
+   "A_better": 6,
+   "ties": 0,
+   "A_worse": 2,
+   "W_plus": 25.0,
+   "W_minus": 11.0,
+   "p_raw": 0.3828125,
+   "p_holm": 0.59375
+  },
+  {
+   "family": "F3",
+   "comparison": "RM-MDE vs multistart C1",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 1.0738367723264433e-06,
+   "HL": 1.3335484502289278e-06,
+   "HL_CI_low": 6.438918637285603e-07,
+   "HL_CI_high": 2.5901041552725247e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.046875
+  },
+  {
+   "family": "F3",
+   "comparison": "RM-MDE vs multistart C2",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 4.48071849182637e-07,
+   "HL": 6.131251043694189e-07,
+   "HL_CI_low": 1.9793987186386184e-07,
+   "HL_CI_high": 1.0880977853498228e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.046875
+  },
+  {
+   "family": "F2",
+   "comparison": "rand/1+LS vs best/1+LS",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 1.6173107551139806e-07,
+   "HL": 3.04796134509678e-07,
+   "HL_CI_low": 2.403418445761651e-08,
+   "HL_CI_high": 2.2842210481306195e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.9444444444444444,
+   "A_better": 7,
+   "ties": 0,
+   "A_worse": 1,
+   "W_plus": 35.0,
+   "W_minus": 1.0,
+   "p_raw": 0.015625,
+   "p_holm": 0.03125
+  },
+  {
+   "family": "F2",
+   "comparison": "rand/1+LS vs SDE-donor fixedF+LS",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": -1.539899076487776e-09,
+   "HL": 2.324400282924024e-08,
+   "HL_CI_low": -2.8562510085199506e-08,
+   "HL_CI_high": 8.086526707400429e-07,
+   "CI_level": 0.9609375,
+   "rank_biserial": 0.1111111111111111,
+   "A_better": 3,
+   "ties": 0,
+   "A_worse": 5,
+   "W_plus": 20.0,
+   "W_minus": 16.0,
+   "p_raw": 0.84375,
+   "p_holm": 0.84375
+  },
+  {
+   "family": "F2",
+   "comparison": "rand/1+LS vs rand/1",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 4.081291458514067e-06,
+   "HL": 3.7901750461505043e-06,
+   "HL_CI_low": 1.6133206045820798e-06,
+   "HL_CI_high": 9.488089740015276e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.0234375
+  },
+  {
+   "family": "S3",
+   "comparison": "rand/1+LS vs SDE-donor+LS (sensitivity)",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 1.080588553912856e-07,
+   "HL": 1.545658891996907e-07,
+   "HL_CI_low": 2.8030255878782398e-08,
+   "HL_CI_high": 1.025867658467167e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.015625
+  },
+  {
+   "family": "S3",
+   "comparison": "rand/1+LS vs SDE-donor paper(F=Cr=.25)+LS (sensitivity)",
+   "criterion": "mcet",
+   "outcome": "gap",
+   "n_images": 8,
+   "median_diff": 6.945956450921289e-07,
+   "HL": 7.803787437754505e-07,
+   "HL_CI_low": 1.6073356053846939e-07,
+   "HL_CI_high": 2.4401629788877457e-06,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.015625
+  },
+  {
+   "family": "S2-F1",
+   "comparison": "RM-MDE vs PSO",
+   "criterion": "pooled (3 criteria)",
+   "outcome": "success rate",
+   "n_images": 8,
+   "median_diff": 0.40555555555555556,
+   "HL": 0.4194444444444445,
+   "HL_CI_low": 0.2777777777777777,
+   "HL_CI_high": 0.5555555555555556,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.015625
+  },
+  {
+   "family": "S2-F1",
+   "comparison": "RM-MDE vs DE",
+   "criterion": "pooled (3 criteria)",
+   "outcome": "success rate",
+   "n_images": 8,
+   "median_diff": 0.5888888888888889,
+   "HL": 0.5888888888888889,
+   "HL_CI_low": 0.47222222222222215,
+   "HL_CI_high": 0.638888888888889,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.015625
+  },
+  {
+   "family": "S2-F3",
+   "comparison": "RM-MDE vs C1 (multistart)",
+   "criterion": "pooled (3 criteria)",
+   "outcome": "success rate",
+   "n_images": 8,
+   "median_diff": 0.7111111111111111,
+   "HL": 0.6833333333333333,
+   "HL_CI_low": 0.5166666666666666,
+   "HL_CI_high": 0.8111111111111112,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.015625
+  },
+  {
+   "family": "S2-F3",
+   "comparison": "RM-MDE vs C2 (multistart)",
+   "criterion": "pooled (3 criteria)",
+   "outcome": "success rate",
+   "n_images": 8,
+   "median_diff": 0.5055555555555555,
+   "HL": 0.5111111111111111,
+   "HL_CI_low": 0.411111111111111,
+   "HL_CI_high": 0.6388888888888891,
+   "CI_level": 0.9609375,
+   "rank_biserial": 1.0,
+   "A_better": 8,
+   "ties": 0,
+   "A_worse": 0,
+   "W_plus": 36.0,
+   "W_minus": 0.0,
+   "p_raw": 0.0078125,
+   "p_holm": 0.015625
+  }
+ ],
+ "friedman": [
+  {
+   "criterion": "otsu",
+   "chi2": 7.75,
+   "df": 2,
+   "p": 0.020754337873699735,
+   "kendalls_W": 0.484375,
+   "mean_ranks": {
+    "RM-MDE": 1.25,
+    "PSO": 2.125,
+    "DE": 2.625
+   }
+  },
+  {
+   "criterion": "kapur",
+   "chi2": 13.0,
+   "df": 2,
+   "p": 0.0015034391929775717,
+   "kendalls_W": 0.8125,
+   "mean_ranks": {
+    "RM-MDE": 1.0,
+    "PSO": 2.25,
+    "DE": 2.75
+   }
+  },
+  {
+   "criterion": "mcet",
+   "chi2": 14.25,
+   "df": 2,
+   "p": 0.000804733010124613,
+   "kendalls_W": 0.890625,
+   "mean_ranks": {
+    "RM-MDE": 1.0,
+    "PSO": 2.125,
+    "DE": 2.875
+   }
+  }
+ ],
+ "rates": [
+  {
+   "label": "time-matched | otsu | RM-MDE",
+   "success_rate": 87.08333333333333,
+   "CI95_low": 81.66666666666667,
+   "CI95_high": 92.08333333333334
+  },
+  {
+   "label": "time-matched | otsu | PSO",
+   "success_rate": 39.166666666666664,
+   "CI95_low": 28.333333333333332,
+   "CI95_high": 49.583333333333336
+  },
+  {
+   "label": "time-matched | otsu | PSO3x",
+   "success_rate": 57.91666666666666,
+   "CI95_low": 46.666666666666664,
+   "CI95_high": 67.5
+  },
+  {
+   "label": "time-matched | otsu | DE",
+   "success_rate": 31.25,
+   "CI95_low": 20.0,
+   "CI95_high": 43.75
+  },
+  {
+   "label": "multistart | otsu | RM-MDE",
+   "success_rate": 87.08333333333333,
+   "CI95_low": 81.66666666666667,
+   "CI95_high": 92.08333333333334
+  },
+  {
+   "label": "multistart | otsu | C1",
+   "success_rate": 16.25,
+   "CI95_low": 7.5,
+   "CI95_high": 24.583333333333336
+  },
+  {
+   "label": "multistart | otsu | C2",
+   "success_rate": 37.916666666666664,
+   "CI95_low": 27.916666666666668,
+   "CI95_high": 46.666666666666664
+  },
+  {
+   "label": "time-matched | kapur | RM-MDE",
+   "success_rate": 92.5,
+   "CI95_low": 87.91666666666667,
+   "CI95_high": 96.66666666666667
+  },
+  {
+   "label": "time-matched | kapur | PSO",
+   "success_rate": 58.333333333333336,
+   "CI95_low": 42.916666666666664,
+   "CI95_high": 73.33333333333334
+  },
+  {
+   "label": "time-matched | kapur | PSO3x",
+   "success_rate": 65.41666666666666,
+   "CI95_low": 52.08333333333333,
+   "CI95_high": 78.75
+  },
+  {
+   "label": "time-matched | kapur | DE",
+   "success_rate": 35.833333333333336,
+   "CI95_low": 24.16666666666667,
+   "CI95_high": 49.16666666666667
+  },
+  {
+   "label": "multistart | kapur | RM-MDE",
+   "success_rate": 92.5,
+   "CI95_low": 87.91666666666667,
+   "CI95_high": 96.66666666666667
+  },
+  {
+   "label": "multistart | kapur | C1",
+   "success_rate": 39.16666666666667,
+   "CI95_low": 19.58333333333333,
+   "CI95_high": 60.00000000000001
+  },
+  {
+   "label": "multistart | kapur | C2",
+   "success_rate": 47.5,
+   "CI95_low": 28.749999999999996,
+   "CI95_high": 66.25
+  },
+  {
+   "label": "time-matched | mcet | RM-MDE",
+   "success_rate": 90.83333333333333,
+   "CI95_low": 85.83333333333334,
+   "CI95_high": 95.0
+  },
+  {
+   "label": "time-matched | mcet | PSO",
+   "success_rate": 47.5,
+   "CI95_low": 34.166666666666664,
+   "CI95_high": 62.083333333333336
+  },
+  {
+   "label": "time-matched | mcet | PSO3x",
+   "success_rate": 55.833333333333336,
+   "CI95_low": 44.166666666666664,
+   "CI95_high": 67.08333333333334
+  },
+  {
+   "label": "time-matched | mcet | DE",
+   "success_rate": 30.833333333333336,
+   "CI95_low": 20.0,
+   "CI95_high": 41.666666666666664
+  },
+  {
+   "label": "multistart | mcet | RM-MDE",
+   "success_rate": 90.83333333333333,
+   "CI95_low": 85.83333333333334,
+   "CI95_high": 95.0
+  },
+  {
+   "label": "multistart | mcet | C1",
+   "success_rate": 12.083333333333336,
+   "CI95_low": 6.666666666666667,
+   "CI95_high": 17.083333333333332
+  },
+  {
+   "label": "multistart | mcet | C2",
+   "success_rate": 28.749999999999996,
+   "CI95_low": 20.416666666666668,
+   "CI95_high": 35.41666666666667
+  },
+  {
+   "label": "time-matched | pooled | RM-MDE",
+   "success_rate": 90.13888888888889,
+   "CI95_low": 87.5,
+   "CI95_high": 92.77777777777779
+  },
+  {
+   "label": "time-matched | pooled | PSO",
+   "success_rate": 48.333333333333336,
+   "CI95_low": 37.916666666666664,
+   "CI95_high": 59.72222222222223
+  },
+  {
+   "label": "time-matched | pooled | PSO3x",
+   "success_rate": 59.72222222222223,
+   "CI95_low": 51.11111111111111,
+   "CI95_high": 68.75
+  },
+  {
+   "label": "time-matched | pooled | DE",
+   "success_rate": 32.63888888888889,
+   "CI95_low": 26.38888888888889,
+   "CI95_high": 40.13888888888889
+  },
+  {
+   "label": "multistart | pooled | RM-MDE",
+   "success_rate": 90.13888888888889,
+   "CI95_low": 87.5,
+   "CI95_high": 92.91666666666667
+  },
+  {
+   "label": "multistart | pooled | C1",
+   "success_rate": 22.5,
+   "CI95_low": 13.055555555555557,
+   "CI95_high": 32.5
+  },
+  {
+   "label": "multistart | pooled | C2",
+   "success_rate": 38.05555555555556,
+   "CI95_low": 27.499999999999996,
+   "CI95_high": 47.916666666666664
+  },
+  {
+   "label": "ablation A (mcet) | rand/1",
+   "success_rate": 17.5,
+   "CI95_low": 8.75,
+   "CI95_high": 26.666666666666668
+  },
+  {
+   "label": "ablation A (mcet) | rand/1+LS",
+   "success_rate": 90.83333333333333,
+   "CI95_low": 85.83333333333334,
+   "CI95_high": 95.0
+  },
+  {
+   "label": "ablation A (mcet) | best/1+LS",
+   "success_rate": 80.83333333333333,
+   "CI95_low": 74.16666666666667,
+   "CI95_high": 87.08333333333333
+  },
+  {
+   "label": "ablation A (mcet) | SDE-donor fixedF+LS",
+   "success_rate": 89.58333333333334,
+   "CI95_low": 85.41666666666667,
+   "CI95_high": 94.58333333333333
+  },
+  {
+   "label": "ablation A (mcet) | SDE-donor+LS",
+   "success_rate": 78.75000000000001,
+   "CI95_low": 71.66666666666667,
+   "CI95_high": 86.25
+  },
+  {
+   "label": "ablation A (mcet) | SDE-donor paper(F=Cr=.25)+LS",
+   "success_rate": 53.75,
+   "CI95_low": 41.666666666666664,
+   "CI95_high": 65.83333333333333
+  },
+  {
+   "label": "ablation B (mcet) | p_ls=0",
+   "success_rate": 17.5,
+   "CI95_low": 8.75,
+   "CI95_high": 26.666666666666668
+  },
+  {
+   "label": "ablation B (mcet) | p_ls=0.05",
+   "success_rate": 78.33333333333334,
+   "CI95_low": 70.0,
+   "CI95_high": 86.25
+  },
+  {
+   "label": "ablation B (mcet) | p_ls=0.1",
+   "success_rate": 83.75000000000001,
+   "CI95_low": 75.83333333333333,
+   "CI95_high": 91.25
+  },
+  {
+   "label": "ablation B (mcet) | p_ls=0.15",
+   "success_rate": 90.83333333333333,
+   "CI95_low": 85.83333333333334,
+   "CI95_high": 95.0
+  },
+  {
+   "label": "ablation B (mcet) | p_ls=0.25",
+   "success_rate": 92.08333333333334,
+   "CI95_low": 87.5,
+   "CI95_high": 96.66666666666667
+  },
+  {
+   "label": "ablation B (mcet) | p_ls=0.5",
+   "success_rate": 92.5,
+   "CI95_low": 87.91666666666667,
+   "CI95_high": 96.66666666666667
+  },
+  {
+   "label": "ablation B (mcet) | p_ls=1",
+   "success_rate": 90.83333333333333,
+   "CI95_low": 85.00000000000001,
+   "CI95_high": 96.66666666666667
+  }
+ ],
+ "by_n": [
+  {
+   "criterion": "otsu",
+   "n": 6,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 7,
+   "ties": 0,
+   "RMMDE_worse": 1,
+   "p_raw": 0.1484375
+  },
+  {
+   "criterion": "otsu",
+   "n": 6,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "otsu",
+   "n": 6,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 6,
+   "ties": 0,
+   "RMMDE_worse": 2,
+   "p_raw": 0.25
+  },
+  {
+   "criterion": "otsu",
+   "n": 6,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 6,
+   "ties": 0,
+   "RMMDE_worse": 2,
+   "p_raw": 0.3125
+  },
+  {
+   "criterion": "otsu",
+   "n": 7,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 7,
+   "ties": 0,
+   "RMMDE_worse": 1,
+   "p_raw": 0.1953125
+  },
+  {
+   "criterion": "otsu",
+   "n": 7,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 7,
+   "ties": 0,
+   "RMMDE_worse": 1,
+   "p_raw": 0.109375
+  },
+  {
+   "criterion": "otsu",
+   "n": 7,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 7,
+   "ties": 0,
+   "RMMDE_worse": 1,
+   "p_raw": 0.1953125
+  },
+  {
+   "criterion": "otsu",
+   "n": 7,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 4,
+   "ties": 2,
+   "RMMDE_worse": 2,
+   "p_raw": 0.5625
+  },
+  {
+   "criterion": "otsu",
+   "n": 8,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "otsu",
+   "n": 8,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "otsu",
+   "n": 8,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 7,
+   "ties": 0,
+   "RMMDE_worse": 1,
+   "p_raw": 0.015625
+  },
+  {
+   "criterion": "otsu",
+   "n": 8,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 6,
+   "ties": 0,
+   "RMMDE_worse": 2,
+   "p_raw": 0.078125
+  },
+  {
+   "criterion": "kapur",
+   "n": 6,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 6,
+   "ties": 2,
+   "RMMDE_worse": 0,
+   "p_raw": 0.03125
+  },
+  {
+   "criterion": "kapur",
+   "n": 6,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 7,
+   "ties": 1,
+   "RMMDE_worse": 0,
+   "p_raw": 0.015625
+  },
+  {
+   "criterion": "kapur",
+   "n": 6,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 5,
+   "ties": 1,
+   "RMMDE_worse": 2,
+   "p_raw": 0.8125
+  },
+  {
+   "criterion": "kapur",
+   "n": 6,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 4,
+   "ties": 1,
+   "RMMDE_worse": 3,
+   "p_raw": 0.9375
+  },
+  {
+   "criterion": "kapur",
+   "n": 7,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 7,
+   "ties": 0,
+   "RMMDE_worse": 1,
+   "p_raw": 0.0390625
+  },
+  {
+   "criterion": "kapur",
+   "n": 7,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "kapur",
+   "n": 7,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 6,
+   "ties": 1,
+   "RMMDE_worse": 1,
+   "p_raw": 0.03125
+  },
+  {
+   "criterion": "kapur",
+   "n": 7,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 5,
+   "ties": 2,
+   "RMMDE_worse": 1,
+   "p_raw": 0.0625
+  },
+  {
+   "criterion": "kapur",
+   "n": 8,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "kapur",
+   "n": 8,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "kapur",
+   "n": 8,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "kapur",
+   "n": 8,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 7,
+   "ties": 1,
+   "RMMDE_worse": 0,
+   "p_raw": 0.015625
+  },
+  {
+   "criterion": "mcet",
+   "n": 6,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 5,
+   "ties": 2,
+   "RMMDE_worse": 1,
+   "p_raw": 0.09375
+  },
+  {
+   "criterion": "mcet",
+   "n": 6,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "mcet",
+   "n": 6,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "mcet",
+   "n": 6,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 6,
+   "ties": 1,
+   "RMMDE_worse": 1,
+   "p_raw": 0.03125
+  },
+  {
+   "criterion": "mcet",
+   "n": 7,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "mcet",
+   "n": 7,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "mcet",
+   "n": 7,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "mcet",
+   "n": 7,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "mcet",
+   "n": 8,
+   "comparison": "RM-MDE vs PSO",
+   "RMMDE_better": 6,
+   "ties": 1,
+   "RMMDE_worse": 1,
+   "p_raw": 0.03125
+  },
+  {
+   "criterion": "mcet",
+   "n": 8,
+   "comparison": "RM-MDE vs DE",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "mcet",
+   "n": 8,
+   "comparison": "RM-MDE vs multistart C1",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  },
+  {
+   "criterion": "mcet",
+   "n": 8,
+   "comparison": "RM-MDE vs multistart C2",
+   "RMMDE_better": 8,
+   "ties": 0,
+   "RMMDE_worse": 0,
+   "p_raw": 0.0078125
+  }
+ ]
+}

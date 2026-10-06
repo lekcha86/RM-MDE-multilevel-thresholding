@@ -1,0 +1,166 @@
+{
+ "protocol": "SDE sensitivity (Reviewer 1.9: baseline settings; deviation from Ali et al. 2014).\n\nPROTOCOL (fixed before running)\n  SDE variants (all NP = 20, G = 60, oppositional init, tournament-best base, dynamic in-place update):\n    SDE-current : F = 0.5, Cr = 0.9, randomized scale F (0.5 + 0.5 u)   <- the main-study baseline\n    SDE-fixedF  : F = 0.5, Cr = 0.9, F fixed (isolates the randomization)\n    SDE-paper   : F = Cr = 0.25, F fixed                                  <- the settings of Ali et al. (2014); their NP = 10 D and\n                                                                             200 iterations are NOT used, to keep the common budget\n  Context at the same budget: DE (F = 0.5, Cr = 0.9), PSO (main-study settings), RM-MDE.\n  Instances: 8 images x 3 criteria x n = 6, 7, 8, seeds 0..9 (720 runs per method); reference = DP optimum; success gap < 1e-8.\n  Question: do the baseline comparison and the ranking change when the source paper's settings are used?\nOutputs (05_data_results): sde_sensitivity.json, sde_sensitivity_runs.csv   (the original results are not touched)\n",
+ "summary": {
+  "SDE-current": {
+   "runs": 720,
+   "SR": 0.5555555555555556,
+   "gap_mean": 0.002060271951559842,
+   "gap_median": 6.433760541698223e-05,
+   "by_criterion": {
+    "otsu": 0.8333333333333334,
+    "kapur": 0.4166666666666667,
+    "mcet": 0.4166666666666667
+   },
+   "by_n": {
+    "6": 1.25,
+    "7": 0.4166666666666667,
+    "8": 0.0
+   }
+  },
+  "SDE-fixedF": {
+   "runs": 720,
+   "SR": 12.777777777777777,
+   "gap_mean": 0.0005892581621405956,
+   "gap_median": 4.9910241682606724e-06,
+   "by_criterion": {
+    "otsu": 9.166666666666666,
+    "kapur": 15.416666666666668,
+    "mcet": 13.750000000000002
+   },
+   "by_n": {
+    "6": 21.25,
+    "7": 10.833333333333334,
+    "8": 6.25
+   }
+  },
+  "SDE-paper": {
+   "runs": 720,
+   "SR": 17.63888888888889,
+   "gap_mean": 0.001449608557426358,
+   "gap_median": 8.51120836335312e-06,
+   "by_criterion": {
+    "otsu": 19.166666666666668,
+    "kapur": 22.083333333333332,
+    "mcet": 11.666666666666666
+   },
+   "by_n": {
+    "6": 32.5,
+    "7": 12.5,
+    "8": 7.916666666666666
+   }
+  },
+  "DE": {
+   "runs": 720,
+   "SR": 19.02777777777778,
+   "gap_mean": 0.0009417197587670524,
+   "gap_median": 3.1103566561733455e-06,
+   "by_criterion": {
+    "otsu": 19.583333333333332,
+    "kapur": 20.0,
+    "mcet": 17.5
+   },
+   "by_n": {
+    "6": 37.5,
+    "7": 15.416666666666668,
+    "8": 4.166666666666666
+   }
+  },
+  "PSO": {
+   "runs": 720,
+   "SR": 0.5555555555555556,
+   "gap_mean": 0.0012014510719887948,
+   "gap_median": 2.7110878136985642e-05,
+   "by_criterion": {
+    "otsu": 0.8333333333333334,
+    "kapur": 0.0,
+    "mcet": 0.8333333333333334
+   },
+   "by_n": {
+    "6": 1.6666666666666667,
+    "7": 0.0,
+    "8": 0.0
+   }
+  },
+  "RM-MDE": {
+   "runs": 720,
+   "SR": 90.13888888888889,
+   "gap_mean": 1.720291246329929e-05,
+   "gap_median": 0.0,
+   "by_criterion": {
+    "otsu": 87.08333333333333,
+    "kapur": 92.5,
+    "mcet": 90.83333333333333
+   },
+   "by_n": {
+    "6": 93.75,
+    "7": 88.75,
+    "8": 87.91666666666667
+   }
+  }
+ },
+ "paired_WTL_first_strictly_better_tie_worse": {
+  "RM-MDE vs SDE-current": [
+   714,
+   5,
+   1
+  ],
+  "RM-MDE vs SDE-fixedF": [
+   622,
+   86,
+   12
+  ],
+  "RM-MDE vs SDE-paper": [
+   584,
+   121,
+   15
+  ],
+  "RM-MDE vs DE": [
+   574,
+   131,
+   15
+  ],
+  "RM-MDE vs PSO": [
+   710,
+   3,
+   7
+  ],
+  "SDE-current vs DE": [
+   84,
+   2,
+   634
+  ],
+  "SDE-fixedF vs DE": [
+   264,
+   61,
+   395
+  ],
+  "SDE-paper vs DE": [
+   272,
+   56,
+   392
+  ],
+  "SDE-current vs PSO": [
+   266,
+   2,
+   452
+  ],
+  "SDE-fixedF vs PSO": [
+   558,
+   4,
+   158
+  ],
+  "SDE-paper vs PSO": [
+   517,
+   3,
+   200
+  ]
+ },
+ "ranking_by_SR": [
+  "RM-MDE",
+  "DE",
+  "SDE-paper",
+  "SDE-fixedF",
+  "SDE-current",
+  "PSO"
+ ]
+}

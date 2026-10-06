@@ -1,0 +1,443 @@
+{
+ "protocol": "PSO / DE parameter sensitivity (Reviewer 1.9: were the competitors tuned?).\n\nPROTOCOL (fixed before running; baselines only, RM-MDE is not re-run)\n  Instances : 8 images x 3 criteria x n = 6, 7, 8 x seeds 0..9 = 720 runs per configuration; reference = DP optimum;\n              success = gap < 1e-8. RM-MDE reference = the stored RM-MDE results of time_matched_DE_PSO.csv (same instances and seeds).\n  Part 1 (fixed generations, as in the main study)\n    DE  : F in {0.3, 0.5, 0.8} x Cr in {0.2, 0.5, 0.9}, NP = 20, G = 60                       (9 configurations; (0.5, 0.9) is the main one)\n    PSO : ring + constriction (main), global-best + constriction, ring + canonical inertia weight (w = 0.7298, c = 1.49618)  (NP = 20, G = 60)\n    Population / generations at equal evaluations (1200): NP = 40, G = 30 and NP = 10, G = 120 for DE (F = 0.5, Cr = 0.9) and for PSO (main variant).\n  Part 2 (seed-matched wall-clock budget, as in the matched-budget experiment)\n    the DE configuration and the PSO configuration with the highest success in Part 1 are re-run until they have used at least the RM-MDE\n    elapsed time T_target stored for the same (image, criterion, n, seed).\n  Aim: not to find the best setting, but to see whether the superiority of RM-MDE changes when the baseline parameters vary within a reasonable range.\nOutputs (05_data_results): baseline_sensitivity.json, baseline_sensitivity_runs.csv\n",
+ "RM_MDE_reference": {
+  "SR": 90.13888888888889,
+  "gap_mean": 1.720291246329929e-05
+ },
+ "best_DE": "DE F=0.5 Cr=0.9",
+ "best_PSO": "PSO gbest-constriction",
+ "summary": [
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.3 Cr=0.2",
+   "runs": 720,
+   "SR": 0.8333333333333334,
+   "gap_mean": 0.002892755219355767,
+   "gap_median": 6.374201068814654e-05,
+   "runtime_mean": 0.07517913069475779,
+   "by_criterion": {
+    "otsu": 0.4166666666666667,
+    "kapur": 1.6666666666666667,
+    "mcet": 0.4166666666666667
+   },
+   "by_n": {
+    "6": 0.8333333333333334,
+    "7": 1.6666666666666667,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    707,
+    6,
+    7
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.3 Cr=0.5",
+   "runs": 720,
+   "SR": 11.527777777777779,
+   "gap_mean": 0.0023615413636153206,
+   "gap_median": 2.2294060182681416e-05,
+   "runtime_mean": 0.07621483777669104,
+   "by_criterion": {
+    "otsu": 10.833333333333334,
+    "kapur": 17.916666666666668,
+    "mcet": 5.833333333333333
+   },
+   "by_n": {
+    "6": 22.916666666666664,
+    "7": 8.333333333333332,
+    "8": 3.3333333333333335
+   },
+   "RMMDE_better_tie_worse": [
+    629,
+    80,
+    11
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.3 Cr=0.9",
+   "runs": 720,
+   "SR": 4.305555555555555,
+   "gap_mean": 0.0022467687530551834,
+   "gap_median": 4.6770791185634384e-05,
+   "runtime_mean": 0.07625443791669871,
+   "by_criterion": {
+    "otsu": 3.3333333333333335,
+    "kapur": 5.416666666666667,
+    "mcet": 4.166666666666666
+   },
+   "by_n": {
+    "6": 9.583333333333334,
+    "7": 1.25,
+    "8": 2.083333333333333
+   },
+   "RMMDE_better_tie_worse": [
+    686,
+    32,
+    2
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.5 Cr=0.2",
+   "runs": 720,
+   "SR": 0.0,
+   "gap_mean": 0.002238299656413883,
+   "gap_median": 6.641516174557259e-05,
+   "runtime_mean": 0.07512794833302097,
+   "by_criterion": {
+    "otsu": 0.0,
+    "kapur": 0.0,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    713,
+    0,
+    7
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.5 Cr=0.5",
+   "runs": 720,
+   "SR": 4.027777777777778,
+   "gap_mean": 0.0011787675550515337,
+   "gap_median": 2.0615388734030905e-05,
+   "runtime_mean": 0.07639516597207856,
+   "by_criterion": {
+    "otsu": 2.5,
+    "kapur": 7.916666666666666,
+    "mcet": 1.6666666666666667
+   },
+   "by_n": {
+    "6": 8.75,
+    "7": 3.3333333333333335,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    684,
+    28,
+    8
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.5 Cr=0.9",
+   "runs": 720,
+   "SR": 19.02777777777778,
+   "gap_mean": 0.0009417197587670524,
+   "gap_median": 3.1103566561733455e-06,
+   "runtime_mean": 0.07306303958321222,
+   "by_criterion": {
+    "otsu": 19.583333333333332,
+    "kapur": 20.0,
+    "mcet": 17.5
+   },
+   "by_n": {
+    "6": 37.5,
+    "7": 15.416666666666668,
+    "8": 4.166666666666666
+   },
+   "RMMDE_better_tie_worse": [
+    574,
+    131,
+    15
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.8 Cr=0.2",
+   "runs": 720,
+   "SR": 0.0,
+   "gap_mean": 0.001601078055459975,
+   "gap_median": 8.391073093774668e-05,
+   "runtime_mean": 0.06824806444443918,
+   "by_criterion": {
+    "otsu": 0.0,
+    "kapur": 0.0,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    716,
+    0,
+    4
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.8 Cr=0.5",
+   "runs": 720,
+   "SR": 0.0,
+   "gap_mean": 0.0016777464847256606,
+   "gap_median": 7.712572261070697e-05,
+   "runtime_mean": 0.068176851943685,
+   "by_criterion": {
+    "otsu": 0.0,
+    "kapur": 0.0,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    714,
+    0,
+    6
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE F=0.8 Cr=0.9",
+   "runs": 720,
+   "SR": 0.0,
+   "gap_mean": 0.001540813797106112,
+   "gap_median": 6.097535120013434e-05,
+   "runtime_mean": 0.06864929472107582,
+   "by_criterion": {
+    "otsu": 0.0,
+    "kapur": 0.0,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    715,
+    0,
+    5
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "PSO ring-constriction",
+   "runs": 720,
+   "SR": 0.5555555555555556,
+   "gap_mean": 0.0012014510719887948,
+   "gap_median": 2.7110878136985642e-05,
+   "runtime_mean": 0.04689046625086727,
+   "by_criterion": {
+    "otsu": 0.8333333333333334,
+    "kapur": 0.0,
+    "mcet": 0.8333333333333334
+   },
+   "by_n": {
+    "6": 1.6666666666666667,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    710,
+    3,
+    7
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "PSO gbest-constriction",
+   "runs": 720,
+   "SR": 12.083333333333334,
+   "gap_mean": 0.0018436833203637117,
+   "gap_median": 8.538915999796313e-06,
+   "runtime_mean": 0.04798456652699517,
+   "by_criterion": {
+    "otsu": 10.833333333333334,
+    "kapur": 12.083333333333334,
+    "mcet": 13.333333333333334
+   },
+   "by_n": {
+    "6": 25.416666666666664,
+    "7": 8.333333333333332,
+    "8": 2.5
+   },
+   "RMMDE_better_tie_worse": [
+    628,
+    81,
+    11
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "PSO ring-inertia",
+   "runs": 720,
+   "SR": 0.5555555555555556,
+   "gap_mean": 0.0010486119161473896,
+   "gap_median": 3.661663166753414e-05,
+   "runtime_mean": 0.04714587110979159,
+   "by_criterion": {
+    "otsu": 0.4166666666666667,
+    "kapur": 0.4166666666666667,
+    "mcet": 0.8333333333333334
+   },
+   "by_n": {
+    "6": 1.6666666666666667,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    712,
+    3,
+    5
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE NP=40 G=30",
+   "runs": 720,
+   "SR": 0.0,
+   "gap_mean": 0.0012208050443771028,
+   "gap_median": 5.3139670275348456e-05,
+   "runtime_mean": 0.07023775013844392,
+   "by_criterion": {
+    "otsu": 0.0,
+    "kapur": 0.0,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    714,
+    0,
+    6
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "PSO NP=40 G=30",
+   "runs": 720,
+   "SR": 0.0,
+   "gap_mean": 0.001783186894916441,
+   "gap_median": 0.00010656524698706357,
+   "runtime_mean": 0.04744754291556698,
+   "by_criterion": {
+    "otsu": 0.0,
+    "kapur": 0.0,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    716,
+    0,
+    4
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "DE NP=10 G=120",
+   "runs": 720,
+   "SR": 0.9722222222222222,
+   "gap_mean": 0.0030044683290021603,
+   "gap_median": 0.00011720054550684925,
+   "runtime_mean": 0.0682146255570438,
+   "by_criterion": {
+    "otsu": 0.8333333333333334,
+    "kapur": 0.8333333333333334,
+    "mcet": 1.25
+   },
+   "by_n": {
+    "6": 2.5,
+    "7": 0.4166666666666667,
+    "8": 0.0
+   },
+   "RMMDE_better_tie_worse": [
+    709,
+    8,
+    3
+   ]
+  },
+  {
+   "part": "fixed-G",
+   "config": "PSO NP=10 G=120",
+   "runs": 720,
+   "SR": 9.86111111111111,
+   "gap_mean": 0.0015200067465830818,
+   "gap_median": 1.3794403715156178e-05,
+   "runtime_mean": 0.04691713569506343,
+   "by_criterion": {
+    "otsu": 10.0,
+    "kapur": 14.583333333333334,
+    "mcet": 5.0
+   },
+   "by_n": {
+    "6": 22.083333333333332,
+    "7": 5.833333333333333,
+    "8": 1.6666666666666667
+   },
+   "RMMDE_better_tie_worse": [
+    643,
+    70,
+    7
+   ]
+  },
+  {
+   "part": "matched-time",
+   "config": "DE F=0.5 Cr=0.9",
+   "runs": 720,
+   "SR": 32.63888888888889,
+   "gap_mean": 0.00045050858802285536,
+   "gap_median": 5.058824648435131e-07,
+   "runtime_mean": 0.2294551501391753,
+   "by_criterion": {
+    "otsu": 31.25,
+    "kapur": 35.833333333333336,
+    "mcet": 30.833333333333336
+   },
+   "by_n": {
+    "6": 47.5,
+    "7": 30.0,
+    "8": 20.416666666666668
+   },
+   "RMMDE_better_tie_worse": [
+    473,
+    224,
+    23
+   ]
+  },
+  {
+   "part": "matched-time",
+   "config": "PSO gbest-constriction",
+   "runs": 720,
+   "SR": 42.083333333333336,
+   "gap_mean": 0.00151116597248663,
+   "gap_median": 2.8025977759827523e-07,
+   "runtime_mean": 0.2292693484715225,
+   "by_criterion": {
+    "otsu": 36.666666666666664,
+    "kapur": 45.416666666666664,
+    "mcet": 44.166666666666664
+   },
+   "by_n": {
+    "6": 57.91666666666667,
+    "7": 37.083333333333336,
+    "8": 31.25
+   },
+   "RMMDE_better_tie_worse": [
+    406,
+    288,
+    26
+   ]
+  }
+ ]
+}

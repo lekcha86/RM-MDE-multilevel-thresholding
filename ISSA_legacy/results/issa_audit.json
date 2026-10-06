@@ -1,0 +1,52 @@
+{
+ "protocol": "ISSA implementation audit (Reviewer 2, comment 3).\n\nCompares, on the same instances and seeds, with NP = 20, G = 60 and the DP-certified reference:\n  as-run   : gopt.ISSA exactly as used in the main study\n  fixed    : gopt.ISSA with ONE change, greedy acceptance made real (a rejected move is undone)\n  paper    : ISSA written from the update equations of Wu and Yuan (2022) as extracted from the full text\n             (discoverers X exp(-i/(alpha G)) or X + Q with a scalar Q; entrants Q exp((Xworst - X)/i^2) or\n              X_P + w |X - X_P| A+ L with w = wmax - (wmax - wmin) cos(pi t / G), wmax = 1.5, wmin = 0.5;\n              vigilant: Xbest + Levy |X - Xbest| or X + K |X - Xworst| / (f - f_worst + eps), K ~ U(-1, 1);\n              greedy acceptance; PD = 0.3, vigilant fraction 0.2, ST = 0.6)\nAlso reports how often the threshold vector returned by `as-run` is not the one that attains its reported fitness.\nUsage: python issa_audit.py\n",
+ "mismatch_returned_vector": 720,
+ "runs": 720,
+ "results": {
+  "as-run": {
+   "SR": 0.0,
+   "mean_gap": 0.00947755131904417,
+   "median_gap": 0.0005443651369949414,
+   "by_criterion": {
+    "otsu": 0.0,
+    "kapur": 0.0,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   }
+  },
+  "fixed": {
+   "SR": 0.5555555555555556,
+   "mean_gap": 0.0016521657813540868,
+   "median_gap": 3.1921752966714724e-05,
+   "by_criterion": {
+    "otsu": 1.25,
+    "kapur": 0.4166666666666667,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 1.25,
+    "7": 0.4166666666666667,
+    "8": 0.0
+   }
+  },
+  "paper": {
+   "SR": 0.0,
+   "mean_gap": 0.002648140768928644,
+   "median_gap": 9.75629750511153e-05,
+   "by_criterion": {
+    "otsu": 0.0,
+    "kapur": 0.0,
+    "mcet": 0.0
+   },
+   "by_n": {
+    "6": 0.0,
+    "7": 0.0,
+    "8": 0.0
+   }
+  }
+ }
+}
